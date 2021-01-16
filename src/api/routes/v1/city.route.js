@@ -2,8 +2,8 @@ const express = require('express');
 
 const router = express.Router();
 
-const controller = require('../../controller/v1/city.controller')
-const zomatoService = require('../../services/zomato-services')
+const cityController = require('../../controller/v1/city.controller')
+
 
 router
     .route('/:city')
@@ -22,7 +22,7 @@ router
     * @apiError (Unauthorized 401)  Unauthorized  Only authenticated users can access the data
     * @apiError (Forbidden 403)     Forbidden     Only customer can access the data
     */
-    .get(controller.data);
+    .get(cityController.data);
 
 
 module.exports = router;    

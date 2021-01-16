@@ -37,8 +37,21 @@ const getListOfCuisines = async(city_id) => {
     return response
 }
 
+const getListOfRestaurantsForCollection = async (city_id, collection_id) => {
+    const options = {
+        url: `https://developers.zomato.com/api/v2.1/search?entity_id=${city_id}&entity_type=city&collection_id=${collection_id}`,
+        method: 'GET',
+        headers: {
+            'user-key': API_KEY
+        }
+    };
+    const { data: response } = await axios(options)
+    return response
+}
+
 module.exports = {
     getCityInfo,
     getListOfCollections,
     getListOfCuisines,
+    getListOfRestaurantsForCollection,
 }
