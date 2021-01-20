@@ -49,9 +49,37 @@ const getListOfRestaurantsForCollection = async (city_id, collection_id) => {
     return response
 }
 
+const getRestaurantDetails = async (restaurant_id) => {
+    const options = {
+        url: `https://developers.zomato.com/api/v2.1/restaurant?res_id=${restaurant_id}`,
+        method: 'GET',
+        headers: {
+            'user-key': API_KEY
+        }
+    };
+
+    const { data : response } = await axios(options)
+    return response
+}
+
+const getReviews = async(restaurant_id) => {
+    const options = {
+        url: `https://developers.zomato.com/api/v2.1/reviews?res_id=${restaurant_id}&count=10`,
+        method: 'GET',
+        headers: {
+            'user-key': API_KEY
+        }
+    };
+
+    const { data: response } = await axios(options)
+    return response
+}
+
 module.exports = {
     getCityInfo,
     getListOfCollections,
     getListOfCuisines,
     getListOfRestaurantsForCollection,
+    getRestaurantDetails,
+    getReviews,
 }
