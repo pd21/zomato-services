@@ -87,6 +87,19 @@ const getReviews = async(restaurant_id) => {
     return response
 }
 
+const getSearchData = async(city_id, search_term) => {
+    const options = {
+        url: `https://developers.zomato.com/api/v2.1/search?entity_id=${city_id}&entity_type=city&q=${search_term}`,
+        method: 'GET',
+        headers: {
+            'user-key': API_KEY
+        }
+    };
+
+    const { data: response } = await axios(options)
+    return response
+}
+
 module.exports = {
     getCityInfo,
     getListOfCollections,
@@ -95,4 +108,5 @@ module.exports = {
     getListOfRestaurantsForCuisine,
     getRestaurantDetails,
     getReviews,
+    getSearchData,
 }
