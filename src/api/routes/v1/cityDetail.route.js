@@ -25,4 +25,4 @@ router
     .get(cityDetailController.data);
 
 
-module.exports = router;    
+module.exports = router;
