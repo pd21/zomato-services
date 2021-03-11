@@ -6,19 +6,19 @@ const restaurantController = require('../../controller/v1/restaurant.controller'
 router
     .route('/:restaurant_id')
     /**
-    * @api {get} /api/v1/city/restaurant Get restaurant details
-    * @apiDescription get restaurants details
-    * @apiVersion 1.0.0
-    * @apiName data
+    * @api 
+    * @apiDescription 
+    * @apiVersion 
+    * @apiName 
     * @apiGroup
-    * @apiPermission customer
+    * @apiPermission 
     *
-    * @apiHeader {String} Authorization  User's access token
+    * @apiHeader 
     *
-    * @apiSuccess {Object} RenewalOrder
+    * @apiSuccess 
     *
-    * @apiError (Unauthorized 401)  Unauthorized  Only authenticated users can access the data
-    * @apiError (Forbidden 403)     Forbidden     Only customer can access the data
+    * @apiError 
+    * @apiError 
     */
     .get(restaurantController.data)
 

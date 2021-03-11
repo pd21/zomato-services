@@ -14,6 +14,7 @@ const data = async(req, res) => {
         res.send({ locationSuggestions, cuisines, collections  })
     }
     catch(error){
+        // res.sendStatus(404);
         res.send('error')
     }
 }
